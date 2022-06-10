@@ -23,6 +23,7 @@ class MainDrawer extends StatelessWidget {
       child: Column(
         children: [
           Container(
+            color: Theme.of(context).colorScheme.secondary,
             height: 120,
             width: double.infinity,
             padding: EdgeInsets.all(20),
@@ -32,7 +33,7 @@ class MainDrawer extends StatelessWidget {
               style: TextStyle(
                   fontWeight: FontWeight.w900,
                   fontSize: 30,
-                  color: Theme.of(context).colorScheme.secondary),
+                  color: Theme.of(context).colorScheme.primary),
             ),
           ),
           SizedBox(
@@ -42,14 +43,14 @@ class MainDrawer extends StatelessWidget {
             'Meals',
             Icons.restaurant,
             (){
-              Navigator.of(context).pushNamed('/');
+              Navigator.of(context).pushReplacementNamed('/');
             }
           ),
           buildListTile(
               'Settings',
               Icons.settings,
               (){
-                Navigator.of(context).pushNamed(FiltersScreen.routeName);
+                Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName);
               }
           ),
         ],
